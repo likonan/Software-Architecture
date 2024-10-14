@@ -43,13 +43,13 @@ class Output{
 }
 class Process{
     public String process(String text) {
-        // 正则表达式匹配标点符号
+
         Pattern pattern = Pattern.compile("[\\u4e00-\\u9fa5]+");
         Matcher matcher = pattern.matcher(text);
         StringBuffer result = new StringBuffer();
 
         while (matcher.find()) {
-            // 替换匹配的标点符号为空字符串
+
             matcher.appendReplacement(result, "");
         }
         matcher.appendTail(result);

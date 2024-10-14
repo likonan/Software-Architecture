@@ -36,14 +36,13 @@ public class SubProgramStyle extends FileProcessor {
         System.out.println("处理完成，结果已保存到 " + outputFilePath);
     }
     private String process(String text) {
-        // 正则表达式匹配标点符号
-        // 注意：这里使用的是常见的标点符号，你可能需要根据实际情况进行调整
+
         Pattern pattern = Pattern.compile("[\\u4e00-\\u9fa5]+");
         Matcher matcher = pattern.matcher(text);
         StringBuffer result = new StringBuffer();
 
         while (matcher.find()) {
-            // 替换匹配的标点符号为空字符串
+
             matcher.appendReplacement(result, "");
         }
         matcher.appendTail(result);
